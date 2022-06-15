@@ -1,0 +1,190 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  -webkit-border-radius: 0;
+}
+
+input, button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.form {
+  &__title {
+    font-weight: bold;
+    @include fontSize(24, 30);
+    line-height: 1.2;
+    color: $whiteColor;
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    font-weight: 500;
+    @include fontSize(12, 16);
+    line-height: 1.5;
+    letter-spacing: -0.4px;
+    color: rgba(255, 255, 255, 0.4);
+    width: 70%;
+    margin: 0 auto 30px auto;
+    @media (max-width: $breakpoint-lg) {
+      margin-bottom: 30px;
+      width: 100%;
+    }
+  }
+
+  &__notification {
+    font-weight: 500;
+    @include fontSize(12, 14);
+    line-height: 1.5;
+    letter-spacing: -0.4px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 7px;
+
+    & b {
+      font-weight: 700;
+    }
+  }
+
+  &-control {
+    position: relative;
+    margin-bottom: 43px;
+
+    & i {
+      position: absolute;
+      top: calc(50% - 8px);
+      right: 16px;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    &__input, &__textarea {
+      padding: 10px 0 16px 0;
+      border: none;
+      border-bottom: 1px solid #ED1C24;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &__input, &__textarea {
+      width: 100%;
+      background: transparent;
+      border-radius: 0;
+      outline: none;
+      z-index: 1;
+      position: relative;
+      resize: none;
+    }
+
+    &__btn {
+
+    }
+
+  }
+}
+
+::-webkit-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #969696;
+  font-family: 'Montserrat', sans-serif;
+
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+::-moz-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #969696;
+  font-family: 'Montserrat', sans-serif;
+
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+:-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #969696;
+  font-family: 'Montserrat', sans-serif;
+
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+:focus::-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+:focus:-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+:focus:-ms-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+div.wpcf7 .ajax-loader {
+  display: none !important;
+}
+
+
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: #F8F8F8 !important;
+  caret-color: #969696;
+  -webkit-text-fill-color: #969696!important;
+}
+
+/* Change autocomplete styles in WebKit */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  caret-color: #969696;
+  -webkit-text-fill-color: #969696;
+  -webkit-box-shadow: 0 0 0px 1000px #F8F8F8 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

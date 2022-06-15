@@ -1,0 +1,460 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.main {
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+  }
+
+  &-door {
+
+
+    .layer-bottom {
+
+    }
+  }
+}
+
+section {
+  overflow: hidden;
+}
+
+.layer {
+  &-top, &-bottom, &-main {
+    width: 599.54px;
+    height: 585.02px;
+    opacity: 10%;
+    position: absolute;
+    max-width: max-content;
+    object-fit: cover;
+  }
+
+  &-top {
+    top: -250px;
+    right: -250px;
+    transform: rotate(40deg);
+    @media (max-width: $breakpoint-md) {
+      top: -425px;
+      right: -250px;
+      width: 530px;
+      height: 550px;
+    }
+  }
+
+  &-bottom {
+    bottom: -150px;
+    left: -100px;
+    transform: rotate(50deg);
+
+    @media (max-width: $breakpoint-md) {
+
+    }
+  }
+}
+
+body, html {
+  height: 100%;
+}
+
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body .hide-scrollbar, html .hide-scrollbar {
+  scrollbar-width: none
+
+}
+
+body .hide-scrollbar::-webkit-scrollbar, html .hide-scrollbar::-webkit-scrollbar {
+  display: none
+}
+
+
+img::selection {
+  background-color: transparent;
+}
+
+.default-icon {
+  width: 100%;
+
+  & img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.--relative {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.overlap {
+  position: relative;
+  z-index: 3;
+}
+
+body {
+  &.overflow-hidden {
+    padding-left: calc(100vw - 100%);
+    overflow: hidden;
+
+  }
+}
+
+
+.full-height, body, html {
+  height: 100%;
+}
+
+.body-padding {
+  height: 198px;
+  @media (max-width: $breakpoint-md) {
+    height: 52px;
+  }
+}
+
+.section {
+  overflow: hidden;
+  position: relative;
+  /*
+    &-heading {
+      font-weight: bold;
+      @include fontSize(24, 40);
+      line-height: 1.25;
+      color: $primaryColor;
+      margin-bottom: 12px;
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 5px;
+      }
+      /*
+          -moz-text-fill-color: white;
+          -webkit-text-fill-color: white;
+          -moz-text-stroke-color: #666;
+          -webkit-text-stroke-color: #666;
+          -moz-text-stroke-width: 2px;
+          -webkit-text-stroke-width: 2px;
+      *
+      & span {
+        position: relative;
+        z-index: 2;
+
+        &:after {
+          content: '';
+          height: 8px;
+          width: 100%;
+          position: absolute;
+          left: 0;
+          bottom: 4px;
+          background-color: $accentColor;
+          z-index: -1;
+        }
+      }
+
+      &-large {
+        position: absolute;
+        color: $whiteColor;
+
+        transition: .1s;
+        font-weight: 700;
+        @include fontSize(40, 96);
+        line-height: 1;
+        letter-spacing: -0.4px;
+        text-transform: uppercase;
+        text-shadow: 0 0 1px #DBDBDB, -1px -1px 0 #DBDBDB, 1px -1px 0 #DBDBDB, -1px 1px 0 #DBDBDB, 1px 1px 0 #DBDBDB;
+        // filter: drop-shadow(0 0 1px #DBDBDB) drop-shadow(1px 1px 0 #DBDBDB) drop-shadow(-1px 1px 0 #DBDBDB) drop-shadow(1px -1px 0 #DBDBDB) drop-shadow(-1px -1px 0 #DBDBDB);
+        @media (max-width: $breakpoint-md) {
+          top: -15px;
+          z-index: -1;
+          left: 50%;
+          -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+          text-align: center;
+        }
+
+        &.__center {
+          position: absolute;
+          text-align: center;
+          left: 50%;
+          top: -37px;
+          -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+          z-index: -1;
+        }
+      }
+    }
+
+  */
+  &-text {
+
+  }
+
+  &-svg {
+    & svg {
+      overflow: auto;
+    }
+
+    & text {
+      font-family: sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      text-transform: uppercase;
+      stroke: #DBDBDB;
+      font-size: 70px;
+      text-align: center;
+      text-anchor: middle;
+      stroke: dodgerblue;
+      stroke-width: 3px;
+      fill: none;
+    }
+  }
+
+  &-wrap {
+    background-color: #2E3050;
+    border-radius: 4px;;
+    @media (max-width: $breakpoint-md) {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+
+
+  &-inner {
+    position: relative;
+    padding: 0 0 102px 0;
+    overflow: hidden;
+  }
+
+
+  & .swiper {
+    &-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      display: grid;
+      grid-template-columns: 62px 62px;
+      @media (max-width: $breakpoint-md) {
+        grid-template-columns: 46px 46px;
+      }
+
+      &__prev, &__next {
+        position: relative;
+        background-color: #FFFFFF;
+        border: 2px solid #F0F0F0;
+
+        width: 62px;
+        height: 62px;
+        margin: 0;
+        color: #251C10;
+        @include transition(.4);
+        @media (max-width: $breakpoint-md) {
+          border-width: 1px;
+          bottom: 1px;
+          width: 46px;
+          height: 46px;
+        }
+
+        &:after {
+          content: "";
+          font-family: 'icomoon' !important;
+          @include fontSize(18, 23);
+          font-weight: bold;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 1;
+          @include transition(.4);
+        }
+
+        &:hover {
+          color: $whiteColor;
+          border-color: #C19600;
+          background-color: #C19600;
+        }
+      }
+
+      &__prev {
+        &:after {
+          content: "\e900";
+        }
+
+        &:hover {
+          &:after {
+            left: 40%;
+          }
+        }
+      }
+
+      &__next {
+        &:after {
+          content: "\e901";
+
+        }
+
+        &:hover {
+          &:after {
+            left: 60%;
+          }
+        }
+      }
+    }
+
+    &-pagination {
+      position: relative;
+      @include fontSize(24, 36);
+      letter-spacing: 0.065em;
+      color: #C19600;
+      line-height: 1;
+      width: 66.666664%;
+      text-align: right;
+      padding: 34px 10px;
+      z-index: 1;
+      bottom: 0;
+      @media (max-width: $breakpoint-md) {
+        padding: 11px 10px;
+      }
+
+      &-current {
+        @include fontSize(24, 36);
+        font-weight: bold;
+      }
+
+      &-total {
+        @include fontSize(12, 18);
+        font-weight: normal;
+      }
+    }
+  }
+
+  &-js {
+    opacity: 0;
+
+    &.load {
+      opacity: 1;
+    }
+  }
+
+}
+
+
+.section-heading {
+  &__large {
+    position: absolute;
+    color: $whiteColor;
+    z-index: 1;
+    transition: .1s;
+    font-weight: 700;
+    @include fontSize(40, 98);
+    line-height: 1;
+    letter-spacing: -0.4px;
+    text-transform: uppercase;
+    text-shadow: 0 0 1px #DBDBDB, -1px -1px 0 #DBDBDB, 1px -1px 0 #DBDBDB, -1px 1px 0 #DBDBDB, 1px 1px 0 #DBDBDB;
+    width: 200%;
+
+    & span {
+      display: block;
+      margin-left: 20%;
+      @media (max-width: $breakpoint-md) {
+        display: inline-block;
+        margin-left: 0;
+      }
+    }
+
+    &.__dark {
+      color: #969696;
+      text-shadow: 0 0 1px #B8B8B8, -1px -1px 0 #B8B8B8, 1px -1px 0 #B8B8B8, -1px 1px 0 #B8B8B8, 1px 1px 0 #B8B8B8;
+    }
+
+    &.__center {
+      text-align: center;
+      left: 50%;
+      bottom: 10px;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+
+    &.__left {
+      @media (min-width: 1385px) {
+        left: -93px;
+        bottom: 11px;
+      }
+      @media (min-width: $breakpoint-md) and (max-width: 1385px) {
+        left: 0;
+      }
+    }
+
+    @media (max-width: $breakpoint-md) {
+      top: -15px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      text-align: center;
+    }
+  }
+
+
+  &__small {
+    font-weight: bold;
+    @include fontSize(24, 40);
+    line-height: 1.25;
+    color: $primaryColor;
+
+    & span {
+      position: relative;
+      z-index: 2;
+
+      &:after {
+        content: '';
+        height: 8px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 4px;
+        background-color: $accentColor;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+.main {
+  &-wrapper {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+  }
+}
+
+
+.carousel {
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+
+  &.loadSlider {
+    opacity: 1;
+  }
+}

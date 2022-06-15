@@ -1,0 +1,84 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.other-page {
+  height: calc(100vh - 140px);
+  margin-top: 140px;
+  overflow: hidden;
+  padding-top: 0;
+  @media (max-width: $breakpoint-md) {
+    height: auto;
+    margin-top: 52px;
+    padding: 50px 0;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__content {
+    background-color: rgba(255, 255, 255, 0.79);
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 90px 8%;
+    @media (max-width: $breakpoint-md) {
+      padding: 53px 3%;
+    }
+  }
+
+  &__number {
+    font-weight: 700;
+    @include fontSize(104, 214);
+    line-height: 0.9;
+    color: #A86A3D;
+  }
+
+
+  &__title {
+    @include fontSize(48, 80);
+    font-weight: bold;
+    line-height: 1;
+    color:#A86A3D;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    margin: 0 auto 24px auto;
+    @include fontSize(18, 24);
+    line-height: 1.2;
+    font-weight: 700;
+
+    & a {
+      font-weight: 700;
+      color: $accentColor;
+      @include fontSize(14, 16);
+    }
+
+    & span {
+      display: block;
+      margin-top: 10px;
+      width: 100%;
+      font-weight: 500;
+      @include fontSize(14, 16);
+    }
+
+    @media (max-width: $breakpoint-md) {
+    }
+  }
+
+  & .btn-view-details{
+    min-width: 124px;
+  }
+}
+
+.s-shipping-returns {
+  padding: 0 0 88px 0;
+  @media (max-width: $breakpoint-lg) {
+    padding-bottom: 50px;
+  }
+}

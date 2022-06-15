@@ -1,0 +1,108 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.s-cta {
+  padding: 44px 0;
+
+  &__img {
+    &-box {
+      height: 100%;
+      width: 100%;
+      @media (min-width: $breakpoint-md) {
+        height: 145px;
+      }
+    }
+  }
+
+  &__info {
+    background: $whiteColor;
+    box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.09);
+    padding: 16px 48px;
+    height: 100%;
+    @media (max-width: $breakpoint-sm) {
+      padding: 35px 10px 25px 10px;
+      text-align: center;
+    }
+
+    &__heading {
+    }
+
+    &-desc {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 34px;
+      letter-spacing: -0.4px;
+      color: #7A7A7A;
+
+      & span {
+        display: block;
+        @media (max-width: $breakpoint-md) {
+          font-size: 16px;
+        }
+      }
+
+      & b {
+        font-weight: 700;
+        color: #333333;
+      }
+
+      & a {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: -0.4px;
+        color: $accentColor;
+        @media (max-width: $breakpoint-md) {
+          display: block;
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    position: relative;
+    font-size: 16px;
+    z-index: 2;
+    color: $whiteColor;
+
+    &-box {
+      position: absolute;
+      width: 58px;
+      height: 58px;
+      border-radius: 100%;
+      background-color: $whiteColor;
+      top: 50%;
+      right: -30px;
+      transform: translate(0, -50%);
+
+      @media (max-width: $breakpoint-sm) {
+        top: auto;
+        bottom: -30px;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+
+      &:after {
+        content: '';
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background-color: $accentColor;
+        box-shadow: 0px 0px 5px 3px rgba(210, 10, 17, 0.2);
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+      }
+    }
+  }
+  
+  &__windows{
+    padding: 0;
+    top:-70px;
+    position: relative;
+  }
+}

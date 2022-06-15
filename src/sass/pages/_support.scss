@@ -1,0 +1,44 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.s-support {
+
+  height: 100vh;
+  padding:50px 0;
+  @media (max-width: $breakpoint-md) {
+
+    height: auto;
+  }
+
+  .section-wrap {
+    padding: 38px 8%;
+    @media (max-width: $breakpoint-md) {
+      padding: 43px 18px;
+      margin-top: 50px;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    @include fontSize(28, 42);
+    line-height: 1.2;
+    color: $accentColor;
+
+    margin-bottom: 20px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    @include fontSize(12, 16);
+    line-height: 1.5;
+
+    color: $whiteColor;
+    margin-bottom: 28px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 26px;
+    }
+  }
+}

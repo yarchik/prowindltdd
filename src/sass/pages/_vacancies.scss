@@ -1,0 +1,156 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.s-vacancies {
+  min-height: 100vh;
+
+
+  &__title {
+    font-weight: bold;
+    @include fontSize(24, 42);
+    line-height: 1.2;
+    color: $accentColor;
+    margin-bottom: 25px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.accordion {
+  padding-top: 8px;
+
+  &-item {
+    background: #2E3050;
+    border-radius: 4px;
+    padding: 28px 8% 29px 8%;
+    margin-bottom: 30px;
+    overflow: hidden;
+
+    &__header {
+      position: relative;
+    }
+
+    &__body {
+      display: none;
+
+      &-inner {
+        margin: 10px 0 0 0;
+        position: relative;
+      }
+    }
+  }
+}
+
+.plus-minus-toggle {
+  width: 46px;
+  height: 46px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  &:before,
+  &:after {
+    background: $accentColor;
+    content: '';
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    @include transition(.3);
+  }
+
+  &:before {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  &:after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+
+.active {
+  & .plus-minus-toggle {
+    &:after {
+      transform-origin: center;
+
+      opacity: 0;
+    }
+  }
+}
+
+
+.position {
+  &-name {
+    font-weight: 700;
+    @include fontSize(20, 28);
+    line-height: 124.9%;
+    color: $whiteColor;
+
+    & span {
+      color: $accentColor;
+    }
+
+    &__sub {
+      font-style: normal;
+      font-weight: 500;
+      @include fontSize(16, 20);
+      line-height: 124.9%;
+      color: $whiteColor;
+      margin-bottom: 5px;
+    }
+  }
+
+  &-description {
+    font-weight: 500;
+    @include fontSize(12, 16);
+    line-height: 1.5;
+    color: $whiteColor;
+    margin-bottom: 46px;
+    margin-top:20px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 29px 0px;
+    }
+  }
+
+  &-details {
+    margin-bottom: 34px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 20px;
+    }
+
+    &__title {
+      font-weight: bold;
+      @include fontSize(16, 18);
+      line-height: 1.55;
+      color: $whiteColor;
+      margin-bottom: 10px;
+    }
+
+    & ul {
+      font-weight: normal;
+      font-size: 14px;
+      @include fontSize(12, 14);
+      line-height: 1.5;
+      color: $whiteColor;
+      padding-left: 15px;
+
+      & li {
+        list-style: disc;
+
+        &:not(&:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

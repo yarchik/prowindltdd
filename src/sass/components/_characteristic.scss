@@ -1,0 +1,37 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.flex-dots {
+  flex-direction: row;
+  display: flex;
+  flex: 1;
+  margin: 0 10px 4px 10px;
+  border-bottom: 1px dashed #ED1C24;
+}
+
+.characteristic {
+  &__wrap {
+
+  }
+
+  &__item {
+
+    &:not(&:last-child) { margin-bottom: 20px;}
+  }
+
+  &__name, &__desc {
+    @include fontSize(14, 16);
+    line-height: 1.2;
+    letter-spacing: -0.4px;
+    color: #333333;
+  }
+
+  &__name {
+    font-weight: 600;
+
+  }
+
+  &__desc {
+    font-weight: 500;
+  }
+}

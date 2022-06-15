@@ -1,0 +1,245 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.footer {
+  background-color: #969696;
+  @media (max-width: $breakpoint-md) {
+
+  }
+
+  &__content {
+    padding: 10px 0 26px 0;
+    border-bottom: 1px solid rgba(216, 216, 216, .6);
+    @media (max-width: $breakpoint-md) {
+      padding: 10px 0 32px 0;
+    }
+
+    &-links {
+      @media (min-width: $breakpoint-md) {
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  &-item {
+    margin-top: 46px;
+    @media (max-width: $breakpoint-md) {
+      margin-top: 36px;
+    }
+
+    &__title {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 19px;
+      color: #ED1C24;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+  }
+
+  .menu {
+    & li {
+      &:not(&:last-child) {
+        margin-bottom: 12px;
+      }
+
+      & a {
+        color: $whiteColor;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 2;
+        @include transition(.3);
+
+        & .icon-download {
+          margin-right: 7px;
+          font-size: 9px;
+        }
+
+        @media (max-width: $breakpoint-lg) {
+        }
+
+
+        &:hover {
+          color: $accentColor;
+        }
+      }
+    }
+  }
+
+  .company {
+    @media (max-width: $breakpoint-md) {
+      padding-bottom: 24px;
+      border-bottom: 1px solid #D8D8D8;
+    }
+
+    &-logo {
+      width: 130px;
+      margin-bottom: 15px;
+      @media (max-width: $breakpoint-md) {
+        margin: 0 auto 15px auto;
+      }
+    }
+
+    &-desc {
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 2;
+      color: $whiteColor;
+      margin-bottom: 20px;
+      @media (max-width: $breakpoint-lg) {
+        margin-bottom: 19px;
+      }
+    }
+
+    &-copyright {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.02em;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.55);
+
+    }
+
+    .social-list {
+      @media (min-width: $breakpoint-md) {
+        display: flex;
+      }
+
+      &__item {
+        & a {
+          width: 32px;
+          height: 32px;
+          border: 1px solid rgba(255, 255, 255, 0.34);
+
+          &:before {
+            content: '';
+            background-color: transparent;
+          }
+
+          & i {
+            font-size: 12px;
+
+            &.icon-fb {
+              font-size: 17px;
+            }
+          }
+        }
+
+        &:hover {
+          & i {
+            color: $whiteColor;
+          }
+        }
+      }
+
+      @media (max-width: $breakpoint-md) {
+        text-align: center;
+      }
+    }
+  }
+
+  .social-list {
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 40px;
+    }
+  }
+
+
+  .contacts {
+    &-list {
+      padding: 0;
+
+      &__wrap {
+        @media (max-width: $breakpoint-md) {
+          padding-bottom: 46px;
+          border-bottom: 1px solid #5B5B5B;
+
+        }
+      }
+
+      &:not(&:last-child) {
+        margin-bottom: 8px;
+        @media (max-width: $breakpoint-md) {
+          margin-bottom: 10px;
+        }
+      }
+
+      & li, & a {
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0.05em;
+        color: $whiteColor;
+      }
+
+      & li {
+        &:not(&:last-child) {
+          margin-bottom: 5px;
+        }
+      }
+
+      & a {
+        @include transition(.3);
+
+        &:hover {
+          color: $accentColor;
+        }
+      }
+    }
+
+    &-item {
+      display: grid;
+      grid-template-columns: 16px 1fr;
+      grid-column-gap: 18px;
+
+      &:not(&:last-child) {
+        margin-bottom: 20px;
+      }
+
+      &__icon {
+        & i {
+          font-size: 16px;
+          color: $accentColor;
+        }
+      }
+    }
+  }
+
+}
+
+.footer-copyright {
+
+
+  padding: 29px 0;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.7);
+  @media (max-width: $breakpoint-md) {
+    text-align: center;
+    padding: 22px 0 20px 0;
+    margin: 0 15px;
+    background-color: #969696;
+  }
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2px;
+    @media (max-width: $breakpoint-md) {
+      text-align: center;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  & .--right {
+    @media (min-width: $breakpoint-md) {
+      text-align: right;
+    }
+  }
+}
+

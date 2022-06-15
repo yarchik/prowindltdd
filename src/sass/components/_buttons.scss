@@ -1,0 +1,163 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.btn {
+  position: relative;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.4px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &-primary {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.4px;
+    background-color: $accentColor;
+    color: $whiteColor;
+    border: 1px solid $accentColor;
+    padding: 12px 38px;
+    min-width: fit-content;
+    @include transition(.3);
+    @media (max-width: $breakpoint-lg) {
+      padding: 9px 31px 10px 31px;
+    }
+
+    &:hover {
+      background: transparent;
+      color: $accentColor;
+    }
+  }
+
+  &-view-details {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    background-color: transparent;
+    color: #323334;
+    border: 1px solid #323334;
+    padding: 16px 18px 15px 16px;
+  }
+
+  &-download {
+    border: none;
+    background-color: transparent;
+    font-weight: 700;
+
+    color: #333333;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: 62px 1fr;
+    grid-gap: 14px;
+    align-items: center;
+
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: 46px 1fr;
+      margin: 0 auto;
+    }
+
+    &__icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 100%;
+      background: $accentColor;
+      box-shadow: 0px 0px 5px 3px rgba(210, 10, 17, 0.2);
+      position: relative;
+
+      transition: all .3s;
+      -webkit-transition: all .3s;
+      @media (max-width: $breakpoint-lg) {
+        width: 46px;
+        height: 46px;
+      }
+
+      &:after {
+        content: '';
+        width: 234%;
+        height: 234%;
+        border: 1px solid #E1E1E1;
+        border-radius: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+
+        transition: all .3s;
+        -webkit-transition: all .3s;
+      }
+    }
+
+    &:hover {
+      color: $accentColor;
+
+      & .btn-download {
+
+
+        &__icon {
+
+
+          &:after {
+            border-color: $accentColor;
+            transform: translate(-50%, -50%) scale(1.1);
+          }
+        }
+      }
+    }
+  }
+
+  &-transparent {
+    line-height: 1;
+    padding: 14px 50px 16px 50px;
+    background-color: transparent;
+    color: $accentColor;
+    border: 2px solid $accentColor;
+    transition: all .4s;
+
+    &:hover {
+      background-color: $accentColor;
+      color: $whiteColor;
+
+    }
+  }
+
+  &-explore {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    color: $accentColor;
+    display: flex;
+    @media (max-width: $breakpoint-md) {
+      margin: 0 auto;
+    }
+
+    & i {
+      font-size: 10px;
+      margin-left: 8px;
+      @include transition(.4);
+    }
+
+    &:hover {
+      & i {
+        margin-left: 16px;
+      }
+    }
+  }
+}
+

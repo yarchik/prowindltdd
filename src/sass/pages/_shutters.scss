@@ -1,0 +1,228 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.s-banner {
+  padding: 24px 0;
+
+  .section {
+    &-heading, &-text {
+      @media (max-width: $breakpoint-md) {
+        text-align: center;
+      }
+    }
+
+    &-heading {
+      margin-bottom: 24px;
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 10px;
+      }
+
+      &__large {
+        bottom: auto;
+        top: -40px;
+        @media (max-width: $breakpoint-md) {
+          top: -20px;
+        }
+      }
+    }
+
+    &-text {
+      margin-bottom: 22px;
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__icon {
+    height: 465px;
+    @media (max-width: $breakpoint-md) {
+      // max-height: 320px;
+      // max-width: 320px;
+      width: calc(100% + 30px);
+      left: -15px;
+
+      height: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+  }
+
+  .offset-1 {
+    @media (max-width: $breakpoint-md) {
+      margin-left: 0;
+    }
+  }
+
+  & .btn-download {
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 55px;
+    }
+  }
+}
+
+.s-benefit {
+  padding: 109px 0 85px 0;
+  background-color: #F8F8F8;
+  @media (max-width: $breakpoint-md) {
+    padding: 66px 0 62px 0;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 62px 8%;
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+      grid-gap: 38px;
+    }
+
+  }
+
+  & .section {
+    &-heading {
+      width: 60%;
+      margin: 0 auto 61px auto;
+      @media (max-width: $breakpoint-md) {
+        width: 100%;
+        margin-bottom: 38px;
+      }
+
+      &__large {
+        color: #F8F8F8;
+        bottom: auto;
+        @media (min-width: $breakpoint-md) {
+          top: -45px;
+        }
+      }
+    }
+  }
+
+  .benefit {
+    &-item {
+      display: grid;
+      grid-template-columns: 62px 1fr;
+      grid-gap: 34px;
+      @media (max-width: $breakpoint-md) {
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        text-align: center;
+      }
+
+      &__title {
+        @include fontSize(18, 20);
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.3;
+        letter-spacing: -0.4px;
+        color: #333333;
+        margin-bottom: 4px;
+        @media (max-width: $breakpoint-md) {
+          margin-bottom: 6px;
+        }
+      }
+
+      &__desc {
+        color: #333333;
+      }
+
+      &__icon {
+        width: 62px;
+        height: 62px;
+        background-color: rgba(237, 28, 36, 0.15);
+        border-radius: 100%;
+        @media (max-width: $breakpoint-md) {
+          width: 50px;
+          height: 50px;
+          margin: 0 auto 10px auto;
+        }
+
+        & i {
+          color: #ED1C24;
+        }
+      }
+    }
+  }
+
+}
+
+.s-introduce {
+  padding-top: 156px;
+  padding-bottom: 66px;
+  @media (max-width: $breakpoint-md) {
+    padding-top: 65px;
+    padding-bottom: 30px;
+  }
+
+  &__icon {
+    height: 100%;
+    max-height: 520px;
+    transform: translateY(-95px);
+    @media (max-width: $breakpoint-md) {
+      transform: translateY(0);
+      max-height: 312px;
+    }
+  }
+
+  &__inner {
+    background-color: #969696;
+    padding: 92px 33px;
+    height: 100%;
+    @media (max-width: $breakpoint-md) {
+      padding: 45px 32px;
+    }
+  }
+
+  & .section {
+    &-heading, &-text {
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 21px;
+      }
+    }
+
+    &-heading {
+
+      &__small {
+        color: $whiteColor;
+        margin-bottom: 13px;
+      }
+
+      &__large {
+        @media (min-width: $breakpoint-md) {
+          left: 20px;
+          top: -58px;
+        }
+      }
+    }
+
+    &-text {
+      margin-bottom: 34px;
+      color: #D8D8D8;
+    }
+  }
+
+  &__column {
+    @media (max-width: $breakpoint-md) {
+      &:nth-child(1) {
+        order: 2;
+      }
+      &:nth-child(2) {
+        order: 1;
+      }
+    }
+  }
+
+  .layer-bottom {
+    bottom: -150px;
+    left: 250px;
+    transform: rotate(65deg);
+    z-index: -1;
+
+    @media (max-width: $breakpoint-md) {
+      bottom: -150px;
+      left: 50%;
+      transform: translateX(-50%) rotate(65deg);
+
+    }
+  }
+}
